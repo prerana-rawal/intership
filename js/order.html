@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../../../jquery.js"></script>
+    <link rel="stylesheet" href="login.css">
+    <script>
+        $(document).ready(function(){
+            $("#dvdord").hide();
+            $(this).mousemove(function(){
+                $("#dvdord").slideDown(5000);
+            });
+       
+
+        $("#txtmno").mouseout(function(){
+                var mob=$("#txtmno").val();
+                let reg=/^[0-9]{10}$/
+                if((reg.test(mob)) && (mob!=null))
+                {
+                    $("#lblmob").text("valid input").css("color","green");   
+                }
+                else
+                {
+                    $("#lblmob").text("**Please enter a numeric value of 10 digits[9167543567]**").css("color","red");
+                    $("#txtmno").focus();
+                }
+            });
+
+            $("#txtpin").mouseout(function(){
+                var pin=$("#txtpin").val();
+                let reg=/^[0-9]{6}$/;
+                if((reg.test(pin)) && (pin!=null))
+                {
+                   
+                    $("#lblpin").text("valid input").css("color","green");   
+                }
+                else
+                {
+                    $("#lblpin").text("**Please enter 6 digit pin number [395010]**").css("color","red");
+                    $("#txtpin").focus();
+                }
+            })
+        });
+
+    </script>
+</head>
+    <body class="backpic">
+        <table id="tblhead">
+            <tr>
+                <td align="center" class="col-4 bg-warning"><img src="../restaurant.jpg" alt="logo" width="290px" height="130px"></td>
+                <td class="col-8 bg-light">
+                    <a href="home.html" class="btn btn-lg btn-outline-info pad">Home</a>
+                    <a href="dishdetail.html" class="btn btn-lg btn-outline-info pad">Order</a>
+                    <a href="aboutus.html" class="btn btn-lg btn-outline-info pad">About Us</a>
+                    <a href="contactus.html" class="btn btn-lg btn-outline-info pad">Contact Us</a>
+                    <a href="feedback.html" class="btn btn-lg btn-outline-info pad">Feedback</a>
+                </td>
+            </tr>
+        </table>
+        <form action="" method=" post" class="form-group msg">
+            <div class=" dtpad">
+                <div class="heading" id="head">
+                    <h3 align="center" class="text-light font-weight-bolder">Order</h3>
+                </div>
+                <div style="padding-left: 40px;" id="dvdord" class="bg-warning text-info">
+                    <label class="font-weight-bold fnts">1. Enter your Email Id number</label>
+                    <br>
+                    <input type="email" id="txtmail" name="mail" class="form-control col-7" placeholder="radha44@gmail.com">
+                    <br>
+                    <label class="font-weight-bold fnts">2. Enter your Mobile number</label>
+                    <br>
+                    <input type="text" id="txtmno" name="mob" class="form-control col-7" placeholder="91xxxxxxxx">
+                    <label id="lblmob"></label>
+                    <br>
+                    <label class="font-weight-bold fnts">3. Address</label>
+                    <textarea name="txtadv" id="txtadv" class="form-control col-7" cols="10" rows="4" placeholder="Enter your Active Address"></textarea>
+                    <br>
+                    <label class="font-weight-bold fnts">4. Enter your Pin Number</label>
+                    <br>
+                    <input type="text" id="txtpin" name="pin" class="form-control col-7" placeholder="395010">
+                    <label id="lblpin"></label>
+                    <br>
+                <input type="submit" value="Order Now" class="btn btn-block btn-outline-danger">
+                </div>
+                </div>
+        </form>
+</body>
+</html>

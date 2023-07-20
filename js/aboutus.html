@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../../../jquery.js"></script>
+    <link rel="stylesheet" href="login.css">
+    <script>
+        $(document).ready(function(){
+            $("#im1,#im2,#im3").mousemove(function(){
+                $("#info").slideToggle(2000)
+            });
+        });
+    </script>
+</head>
+<body class="backpic">
+    <table>
+        <tr>
+            <td align="center" class="col-4 bg-warning"><img src="../restaurant.jpg" alt="logo" width="290px" height="130px"></td>
+            <td class="col-8 bg-light">
+                <a href="home.html" class="btn btn-lg btn-outline-info pad">Home</a>
+                <a href="dishdetail.html" class="btn btn-lg btn-outline-info pad">Order</a>
+                <a href="aboutus.html" class="btn btn-lg btn-outline-info pad">About Us</a>
+                <a href="contactus.html" class="btn btn-lg btn-outline-info pad">Contact Us</a>
+                <a href="feedback.html" class="btn btn-lg btn-outline-info pad">Feedback</a>
+            </td>
+        </tr>
+    </table>
+    <div class=" dtpad">
+        <div class="heading">
+            <h3 align="center" class="text-light font-weight-bolder">ABOUT US</h3>
+        </div>
+        <img id="im1" class=" rounded-circle col-3 picpad" src="../owner.jpg" width="150px" height="240px" alt="owner picture">
+        <img id="im2" class="rounded-circle col-3 picpad" src="../resttpic.jpg" width="150px" height="240px" alt="restaurant picture">
+        <img id="im3" class="rounded-circle col-3 picpad" src="../ownerman.jpg" width="150px" height="240px" alt="owner picture">
+    </div>
+    <div id="info" align="center" class="divpad text-light dtpad set">Restaurant Name :- <u> NamahShivay</u> <br>Opening Timming:-<u>08:00 AM</u><br>Closing Timming :-<u>10:00 PM</u><br>Location :-<u> Near RadheyKrishna Hall, <br>parvat patiya,<br> Magob,<br> Surat </u></div>
+</body>
+</html>

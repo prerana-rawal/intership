@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../../../jquery.js"></script>
+    <link rel="stylesheet" href="login.css">
+    <style>
+       
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#txtuname").mouseout(function(){
+                var uname=$("#txtuname").val();
+                var reg=/^[a-zA-Z]{3,}$/;
+                if((reg.test(uname)) && (uname!=null))
+                {
+                    $("#lbluname").text("valid input").css("color","green");   
+                }
+                else
+                {
+                    $("#lbluname").text("**Please enter alphabetic value more than two character [ram,sita]**").css("color","red");
+                    $("#txtuname").focus();
+                }
+            });
+                
+                
+            $("#txtmno").mouseout(function(){
+                var mob=$("#txtmno").val();
+                let reg=/^[0-9]{10}$/
+                if((reg.test(mob)) && (mob!=null))
+                {
+                    $("#lblmob").text("valid input").css("color","green");   
+                }
+                else
+                {
+                    $("#lblmob").text("**Please enter a numeric value of 10 digits[9167543567]**").css("color","red");
+                    $("#txtmno").focus();
+                }
+            });
+    
+            $("#btn").click(function(){
+              
+                if(($("#lbluname").text()=="valid input") && ($("#lblmob").text()=="valid input"))
+                {
+                    window.location.href='home.html';
+                }
+                else
+                {
+                    window.location.href='';
+                    alert("please fill the correect information then only you will be able to go to the website..");  
+                }
+            });
+        });
+    </script>
+</head>
+<body class="mag" style="background-color:pink">
+    
+    <div class="rms logdiv">
+        <div style="border: 2px solid chartreuse; box-shadow: 10px 18px 18px teal">
+            <h1 align="center" class="text-warning font-weight-bolder">LOGIN PAGE</h1>
+        </div>
+        <br>
+        <br>
+        <label for="txtuname" class="text-info font-weight-bold fnts">Username</label>
+        <input type="text" id="txtuname" name="txtuname" class="col-9 mrg">
+        <br>
+        <label id="lbluname" class="errormar"></label>
+        <br>
+        <br>
+        <label for="txtmno" class="text-info font-weight-bold fnts">Mobile No</label>
+        <input type="text" id="txtmno" name="mob" class="col-9 mgr">
+        <label id="lblmob" class="errormar"></label>
+        <br>
+        <br>
+        <button class="btn btn-lg btn-block btn-outline-info" id="btn">Login</button>
+        <br>
+    </div>
+</body>
+</html>
+
